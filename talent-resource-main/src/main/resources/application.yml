@@ -1,0 +1,22 @@
+server:
+  port: 8701
+
+spring:
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+  profiles:
+    active: dev
+
+mybatis-plus:
+  mapper-locations: classpath*:com/gishere/talent/statistics/**/xml/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+      logic-delete-field: deleteFlag
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
